@@ -16,7 +16,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <>
       <Head>
-        <title>OpenGPT</title>
+        <title>LetsrunAI</title>
       </Head>
       <Analytics />
       {/* <SessionProvider session={session}> */}
