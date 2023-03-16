@@ -24,7 +24,7 @@ export function CallToAction() {
             开始使用
           </h2>
           <p className="mt-4 text-lg tracking-tight text-white">
-            立即使用海量的 ChatGPT 应用，或在几秒钟内创建属于自己的应用。
+            立即使用海量的 AI 应用，或在几秒钟内创建属于自己的应用。
           </p>
           <Button href="/app/new" color="white" className="mt-10">
             创建应用

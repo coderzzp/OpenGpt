@@ -42,7 +42,7 @@ export async function OpenAIStream(
   const { isUsingLicense, key } = await selectApiKeyOrActivateLicenseKey(
     userKey
   )
-  const res = await fetch('https://api.openai.com/v1/chat/completions', {
+  const res = await fetch('https://letsrunai.com/v1/chat/completions', {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${key}`,
