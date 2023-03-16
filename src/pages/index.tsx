@@ -10,7 +10,7 @@ import { prisma } from '@/server/db'
 import type { GetStaticProps, InferGetServerSidePropsType } from 'next'
 import * as R from 'ramda'
 import { useState } from 'react'
-import { GoogleAnalytics } from "nextjs-google-analytics";
+import { GoogleAnalytics } from 'nextjs-google-analytics'
 
 type App = {
   id: string
@@ -39,10 +39,10 @@ const Home = (props: InferGetServerSidePropsType<typeof getStaticProps>) => {
 
   const list = searchValue
     ? apps.filter(
-      (app) =>
-        app.name.includes(searchValue) ||
-        app.description.includes(searchValue)
-    )
+        (app) =>
+          app.name.includes(searchValue) ||
+          app.description.includes(searchValue)
+      )
     : apps
 
   const handleShowMore = () => {
