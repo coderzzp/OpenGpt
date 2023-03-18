@@ -13,48 +13,54 @@ export const config = {
 }
 
 const handler = async (req: NextRequest): Promise<Response> => {
-  const {
-    userInput,
-    prompt: testPrompt,
-    id,
-    userKey,
-  } = (await req.json()) as GenerateApiInput
-
-  if (!testPrompt && !id) {
-    console.log('No prompt or id in the request')
-    return new Response('Invalid', { status: 400 })
-  }
-
-  if (!userInput) {
-    return new Response('Invalid user input', { status: 400 })
-  }
-
-  let prompt = ''
-  if (testPrompt) {
-    prompt = testPrompt
-  } else {
-    if (!id) {
+  try {
+    const {
+      userInput,
+      prompt: testPrompt,
+      id,
+      userKey,
+    } = (await req.json()) as GenerateApiInput
+  
+    if (!testPrompt && !id) {
       console.log('No prompt or id in the request')
       return new Response('Invalid', { status: 400 })
     }
-    const v = await fetchPrompt(id)
-    prompt = v.prompt
+  
+    if (!userInput) {
+      return new Response('Invalid user input', { status: 400 })
+    }
+  
+    let prompt = ''
+    if (testPrompt) {
+      prompt = testPrompt
+    } else {
+      if (!id) {
+        console.log('No prompt or id in the request')
+        return new Response('Invalid', { status: 400 })
+      }
+      const v = await fetchPrompt(id)
+      prompt = v.prompt
+    }
+  
+    const payload: OpenAIStreamPayload = {
+      model: 'gpt-3.5-turbo',
+      messages: [{ role: 'user', content: `${prompt} {${userInput}}` }],
+      temperature: 0.7,
+      top_p: 1,
+      frequency_penalty: 0,
+      presence_penalty: 0,
+      max_tokens: MAX_TOKENS,
+      stream: true,
+      n: 1,
+    }
+  
+    const stream = await OpenAIStream(payload, userKey)
+    return new Response(stream)
+  } catch (error) {
+    console.log('error',error)
+    throw error
   }
-
-  const payload: OpenAIStreamPayload = {
-    model: 'gpt-3.5-turbo',
-    messages: [{ role: 'user', content: `${prompt} {${userInput}}` }],
-    temperature: 0.7,
-    top_p: 1,
-    frequency_penalty: 0,
-    presence_penalty: 0,
-    max_tokens: MAX_TOKENS,
-    stream: true,
-    n: 1,
-  }
-
-  const stream = await OpenAIStream(payload, userKey)
-  return new Response(stream)
+  
 }
 
 export default handler
