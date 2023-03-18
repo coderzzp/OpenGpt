@@ -42,17 +42,20 @@ export async function OpenAIStream(
   const { isUsingLicense, key } = await selectApiKeyOrActivateLicenseKey(
     userKey
   )
-  const res = await fetch(`${process.env.OPENAI_URL}/v1/chat/completions`, {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${key}`,
-    },
-    method: 'POST',
-    body: JSON.stringify({
-      ...payload,
-      max_tokens: isUsingLicense ? MAX_TOKENS * 2 : MAX_TOKENS,
-    }),
-  })
+  const res = await fetch(
+    `${process.env.OPENAI_URL || 'https://api.openai.com'}/v1/chat/completions`,
+    {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${key}`,
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        ...payload,
+        max_tokens: isUsingLicense ? MAX_TOKENS * 2 : MAX_TOKENS,
+      }),
+    }
+  )
 
   const stream = new ReadableStream({
     async start(controller) {
