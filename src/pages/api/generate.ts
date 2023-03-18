@@ -20,16 +20,16 @@ const handler = async (req: NextRequest): Promise<Response> => {
       id,
       userKey,
     } = (await req.json()) as GenerateApiInput
-  
+
     if (!testPrompt && !id) {
       console.log('No prompt or id in the request')
       return new Response('Invalid', { status: 400 })
     }
-  
+
     if (!userInput) {
       return new Response('Invalid user input', { status: 400 })
     }
-  
+
     let prompt = ''
     if (testPrompt) {
       prompt = testPrompt
@@ -41,7 +41,7 @@ const handler = async (req: NextRequest): Promise<Response> => {
       const v = await fetchPrompt(id)
       prompt = v.prompt
     }
-  
+
     const payload: OpenAIStreamPayload = {
       model: 'gpt-3.5-turbo',
       messages: [{ role: 'user', content: `${prompt} {${userInput}}` }],
@@ -53,14 +53,13 @@ const handler = async (req: NextRequest): Promise<Response> => {
       stream: true,
       n: 1,
     }
-  
+
     const stream = await OpenAIStream(payload, userKey)
     return new Response(stream)
   } catch (error) {
-    console.log('error',error)
+    console.log('error', error)
     throw error
   }
-  
 }
 
 export default handler
