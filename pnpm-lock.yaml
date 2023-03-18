@@ -36,6 +36,8 @@ specifiers:
   eventsource-parser: ^0.0.5
   next: ^13.2.1
   next-auth: ^4.19.0
+  next-seo: ^5.15.0
+  next-sitemap: ^4.0.5
   nextjs-google-analytics: ^2.3.3
   postcss: ^8.4.14
   prettier: ^2.8.1
@@ -76,6 +78,8 @@ dependencies:
   eventsource-parser: 0.0.5
   next: 13.2.3_biqbaboplfbrettd7655fr4n2y
   next-auth: 4.20.1_nvzgbose6yf6w7ijjprgspqefi
+  next-seo: registry.npmmirror.com/next-seo/5.15.0_nvzgbose6yf6w7ijjprgspqefi
+  next-sitemap: registry.npmmirror.com/next-sitemap/4.0.5_next@13.2.3
   nextjs-google-analytics: registry.npmmirror.com/nextjs-google-analytics/2.3.3_next@13.2.3+react@18.2.0
   ramda: 0.28.0
   react: 18.2.0
@@ -970,7 +974,7 @@ packages:
     dependencies:
       acorn-node: 1.8.2
       defined: 1.0.1
-      minimist: 1.2.8
+      minimist: registry.npmmirror.com/minimist/1.2.8
 
   /didyoumean/1.2.2:
     resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==}
@@ -1966,7 +1970,7 @@ packages:
     resolution: {integrity: sha512-g1MWMLBiz8FKi1e4w0UyVL3w+iJceWAFBAaBnnGKOpNa5f8TLktkbre1+s6oICydWAm+HRUGTmI+//xv2hvXYA==}
     hasBin: true
     dependencies:
-      minimist: 1.2.8
+      minimist: registry.npmmirror.com/minimist/1.2.8
     dev: true
 
   /jsx-ast-utils/3.3.3:
@@ -2055,9 +2059,6 @@ packages:
     dependencies:
       brace-expansion: 1.1.11
     dev: true
-
-  /minimist/1.2.8:
-    resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
 
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
@@ -2908,7 +2909,7 @@ packages:
     dependencies:
       '@types/json5': 0.0.29
       json5: 1.0.2
-      minimist: 1.2.8
+      minimist: registry.npmmirror.com/minimist/1.2.8
       strip-bom: 3.0.0
     dev: true
 
@@ -3080,6 +3081,12 @@ packages:
     resolution: {integrity: sha512-UYdykTcVxB6lfdyLzAqLyyYAlOcpoluECvjsdoaqfQmz9p+3LRaIqYcNiL/J2kFYp66fBM8wwBvIGVEjq7KtZw==}
     dev: false
 
+  registry.npmmirror.com/@corex/deepmerge/4.0.37:
+    resolution: {integrity: sha512-PX90bEnrLdxd5e6rSFWsghExMuSw0Uov3fWJuuaoFuUQIS/446diu/4seExK5b+43L+SOBbd2uBGwYUkG1JfCw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@corex/deepmerge/-/deepmerge-4.0.37.tgz}
+    name: '@corex/deepmerge'
+    version: 4.0.37
+    dev: false
+
   registry.npmmirror.com/@next/swc-android-arm-eabi/13.2.3:
     resolution: {integrity: sha512-mykdVaAXX/gm+eFO2kPeVjnOCKwanJ9mV2U0lsUGLrEdMUifPUjiXKc6qFAIs08PvmTMOLMNnUxqhGsJlWGKSw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@next/swc-android-arm-eabi/-/swc-android-arm-eabi-13.2.3.tgz}
     name: '@next/swc-android-arm-eabi'
@@ -3235,6 +3242,42 @@ packages:
     os: [darwin]
     requiresBuild: true
     optional: true
+
+  registry.npmmirror.com/minimist/1.2.8:
+    resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/minimist/-/minimist-1.2.8.tgz}
+    name: minimist
+    version: 1.2.8
+
+  registry.npmmirror.com/next-seo/5.15.0_nvzgbose6yf6w7ijjprgspqefi:
+    resolution: {integrity: sha512-LGbcY91yDKGMb7YI+28n3g+RuChUkt6pXNpa8FkfKkEmNiJkeRDEXTnnjVtwT9FmMhG6NH8qwHTelGrlYm9rgg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/next-seo/-/next-seo-5.15.0.tgz}
+    id: registry.npmmirror.com/next-seo/5.15.0
+    name: next-seo
+    version: 5.15.0
+    peerDependencies:
+      next: ^8.1.1-canary.54 || >=9.0.0
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    dependencies:
+      next: 13.2.3_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  registry.npmmirror.com/next-sitemap/4.0.5_next@13.2.3:
+    resolution: {integrity: sha512-kIABX4n8wJqY2sttRjivBF2r1MgQ1pg12y87qGT+5meippq0ivxaNSRldMDOj8pIGhXW6uFAsCxyH/JftqkwWQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/next-sitemap/-/next-sitemap-4.0.5.tgz}
+    id: registry.npmmirror.com/next-sitemap/4.0.5
+    name: next-sitemap
+    version: 4.0.5
+    engines: {node: '>=14.18'}
+    hasBin: true
+    peerDependencies:
+      '@next/env': '*'
+      next: '*'
+    dependencies:
+      '@corex/deepmerge': registry.npmmirror.com/@corex/deepmerge/4.0.37
+      minimist: registry.npmmirror.com/minimist/1.2.8
+      next: 13.2.3_biqbaboplfbrettd7655fr4n2y
+    dev: false
 
   registry.npmmirror.com/nextjs-google-analytics/2.3.3_next@13.2.3+react@18.2.0:
     resolution: {integrity: sha512-Y6sI6A7wt5dji8hYBnVkOh9LTyImSLFZXx3FpyQgVW7W4b4qEFHjH2u3fhDJsrRZeLlUGM8/RuHD/mhHc2Axfg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/nextjs-google-analytics/-/nextjs-google-analytics-2.3.3.tgz}

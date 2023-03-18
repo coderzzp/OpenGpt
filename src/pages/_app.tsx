@@ -2,8 +2,10 @@ import { Analytics } from '@vercel/analytics/react'
 import { type Session } from 'next-auth'
 // import { SessionProvider } from 'next-auth/react'
 import { type AppType } from 'next/app'
+import { DefaultSeo } from 'next-seo'
 
 import { api } from '@/utils/api'
+import { DEFAULT_SEO_CONFIG } from '@/utils/seoConfig'
 
 import '@/styles/globals.css'
 import { Toaster } from 'react-hot-toast'
@@ -15,6 +17,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <>
+      <DefaultSeo {...DEFAULT_SEO_CONFIG} />
       <Head>
         <title>LetsrunAI</title>
       </Head>
