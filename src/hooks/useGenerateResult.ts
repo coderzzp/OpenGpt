@@ -24,11 +24,11 @@ export const useGenerateResult = () => {
     if (!response.ok) {
       if (response.status === 429) {
         toast(`今日免费额度已用尽，请购买使用次数`, { icon: '🔴' })
-        router.push('/usage')
+        // router.push('/usage')
         return
       } else if (response.status === 439) {
         toast('License key 不合法或次数已耗尽', { icon: '🔴' })
-        router.push('/usage')
+        // router.push('/usage')
       } else {
         throw new Error(response.statusText)
       }
