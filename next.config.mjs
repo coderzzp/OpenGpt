@@ -8,6 +8,13 @@
 
 /** @type {import("next").NextConfig} */
 const config = {
+  webpack: async (config, { isServer }) => {
+    if (isServer) {
+      await import('./src/script/generate-sitemap.js')
+    }
+
+    return config
+  },
   reactStrictMode: true,
 
   /**
