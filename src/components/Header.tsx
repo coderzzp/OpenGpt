@@ -54,9 +54,13 @@ const HEADER_LINKS: Array<{ href: string; label: string }> = [
   //   label: '⭐️ Star on GitHub',
   // },
   // { href: '/usage', label: '💸 Usage' },
+  // {
+  //   href: 'https://gmlgf9zoeg.feishu.cn/share/base/form/shrcnpnTfKZWQdEJltTByoJyOlb',
+  //   label: '🔥 提反馈',
+  // },
   {
-    href: 'https://gmlgf9zoeg.feishu.cn/share/base/form/shrcnpnTfKZWQdEJltTByoJyOlb',
-    label: '🔥 提反馈',
+    href: '/qr_code',
+    label: '🔥 反馈群',
   },
   // { href: '#testimonials', label: '用户评价' },
   // { href: '#pricing', label: '价格' },
