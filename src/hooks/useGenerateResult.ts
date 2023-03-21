@@ -23,7 +23,9 @@ export const useGenerateResult = () => {
 
     if (!response.ok) {
       if (response.status === 429) {
-        toast(`今日免费额度已用尽，请购买使用次数`, { icon: '🔴' })
+        toast(`今日免费额度已用尽，购买更多使用次数功能正加紧开发中`, {
+          icon: '🔴',
+        })
         // router.push('/usage')
         return
       } else if (response.status === 439) {
