@@ -12,7 +12,7 @@ export const config = {
   runtime: 'edge',
 }
 
-const handler = async (req, res: NextApiResponse) => {
+const handler = async (req: any, res: NextApiResponse) => {
   //   return new Response('')
   const { userInput } = await req.json()
   const completion = await openai.chat.completions.create({
