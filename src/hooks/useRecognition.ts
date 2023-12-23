@@ -26,7 +26,7 @@ export function useRecognition({
     recognition.interimResults = true
     recognition.continuous = continuous
     recognition.maxAlternatives = 1
-    const handleRecognitionResult = (e) => {
+    const handleRecognitionResult = (e: any) => {
       console.log(1111)
       let transcript = ''
       for (let i = e.resultIndex; i < e.results.length; i++) {
